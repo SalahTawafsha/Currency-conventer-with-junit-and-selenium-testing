@@ -1,12 +1,10 @@
 package org.example.testing;
 
-import net.bytebuddy.implementation.bind.annotation.Empty;
 import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class CurrencyAPITest {
+public class CurrencyAPITest {
     static Selenium selenium;
     @BeforeAll
     static void beforeAll() {
