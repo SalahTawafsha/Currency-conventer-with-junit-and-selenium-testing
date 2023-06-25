@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 
-public class Selenium {
+class Selenium {
     private WebDriver driver;
 
     public void open() {

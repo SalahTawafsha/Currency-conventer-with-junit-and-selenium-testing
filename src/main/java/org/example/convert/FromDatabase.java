@@ -36,10 +36,6 @@ public class FromDatabase implements Convert {
 
         } catch (IllegalStateException ignored) {
             throw new IllegalStateException("FromAPI is not working");
-        } catch (NumberFormatException e) {
-            throw new NumberFormatException("You must enter only numbers in amount.");
-        } catch (NullPointerException e) {
-            throw new NullPointerException("Please select From and to currency.");
         }
     }
 }

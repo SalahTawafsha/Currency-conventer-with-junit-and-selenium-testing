@@ -4,7 +4,7 @@ import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class CurrencyFromAPITest {
+class CurrencyFromAPITest {
     static Selenium selenium;
     @BeforeAll
     static void beforeAll() {

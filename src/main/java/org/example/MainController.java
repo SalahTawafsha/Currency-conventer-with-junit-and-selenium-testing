@@ -60,9 +60,11 @@ public class MainController implements Initializable {
 
                 result = convert.convert(from.getValue(), to.getValue(), Double.parseDouble(amount.getText()));
 
+                round(result);
+
                 Platform.runLater(() -> {
-                    rate.setText(String.format("%.2f", result[Convert.RATE]));
-                    resultTextField.setText(String.format("%.2f", result[Convert.RESULT]));
+                    rate.setText(String.valueOf(result[Convert.RATE]));
+                    resultTextField.setText(String.valueOf(result[Convert.RESULT]));
                 });
 
             } catch (Exception e) {
@@ -81,6 +83,11 @@ public class MainController implements Initializable {
         });
         t.start();
 
+    }
+
+    public static void round(Double[] result) {
+        result[Convert.RATE] = Math.round(result[Convert.RATE] * 100.0) / 100.0;
+        result[Convert.RESULT] = Math.round(result[Convert.RESULT] * 100.0) / 100.0;
     }
 
     @Override
