@@ -1,21 +1,21 @@
 package org.example.helper;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import org.example.model.Currency;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class FileManagement {
-    private static List<Currency> currencies;
+    private static ObservableList<Currency> currencies;
 
-    public static List<Currency> readCurrency(String path) {
+    public static ObservableList<Currency> readCurrency(String path) {
         if (currencies != null)
             return currencies;
 
-        currencies = new ArrayList<>();
+        currencies = FXCollections.observableArrayList();
 
         try (BufferedReader br = new BufferedReader(new FileReader(path))) {
             String line;

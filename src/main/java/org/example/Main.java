@@ -1,21 +1,26 @@
 package org.example;
 
-import org.example.testing.Selenium;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
-import java.time.Duration;
+import java.io.File;
 
-public class Main {
+public class Main extends Application {
 
-    public static void main(String[] args) throws InterruptedException {
-        Selenium s = new Selenium();
-        System.out.println("test");
-        s.open();
-        s.enterAmount("15");
-        System.out.println( "'"+ s.submit() +"'");
+    public static void main(String[] args) {
+        launch(args);
+    }
+
+    @Override
+    public void start(Stage stage) throws Exception {
+        FXMLLoader fxmlLoader =
+                new FXMLLoader(new File("src/main/java/org/example/view/Main-veiw.fxml").toURI().toURL());
+
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setTitle("Currency Converter");
+        stage.setScene(scene);
+        stage.show();
     }
 }
