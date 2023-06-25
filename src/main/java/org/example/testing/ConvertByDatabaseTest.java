@@ -1,5 +1,6 @@
 package org.example.testing;
 
+import org.example.MainController;
 import org.example.convert.Convert;
 import org.example.convert.FromDatabase;
 import org.example.model.Currency;
@@ -7,7 +8,10 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 
 class ConvertByDatabaseTest {
@@ -51,11 +55,29 @@ class ConvertByDatabaseTest {
         assertThrows(IllegalArgumentException.class, () -> convert.convert(from, notInList, amount));
     }
 
-//    @Test
-//    @DisplayName("Round Test")
-//    void roundTest() {
-//        Convert convert = mock(Convert.class);
-//    }
+    @Test
+    @DisplayName("Round Test")
+    void roundTest() {
+        Currency from = new Currency("United States dollar", "USD");
+        Currency to = new Currency("Israeli New Shekel", "ILS");
+        Double amount = 100.0;
+
+        try {
+            Convert convert = mock(Convert.class);
+            when(convert.convert(from, to, amount)).thenReturn(new Double[]{3.54445, 350.15559});
+
+            Double[] result = convert.convert(from, to, amount);
+
+            MainController.round(result);
+
+            assertEquals(result[0], 3.54);
+            assertEquals(result[1], 350.16);
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+    }
 
 
 }
