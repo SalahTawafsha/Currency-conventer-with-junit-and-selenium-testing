@@ -13,6 +13,7 @@ public class Main {
 
     public static void main(String[] args) throws InterruptedException {
         Selenium s = new Selenium();
+        System.out.println("test");
         s.open();
         s.enterAmount("15");
         System.out.println( "'"+ s.submit() +"'");

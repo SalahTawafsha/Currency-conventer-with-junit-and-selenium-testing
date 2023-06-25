@@ -41,7 +41,7 @@ public class Convert {
             Double rate = Double.parseDouble(jsonObj.get("conversion_rate").toString());
             double result = amount * rate;
 
-            return new Double[]{rate, result};
+            return new Double[] {rate, result};
 
         } catch (IOException | IllegalStateException ignored) {
             throw new IllegalStateException("API is not working");
