@@ -16,8 +16,7 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         FXMLLoader fxmlLoader =
-                new FXMLLoader(new File("src/main/java/org/example/view/Main-veiw.fxml").toURI().toURL());
-
+        new FXMLLoader(new File("src/main/java/org/example/view/Main-veiw.fxml").toURI().toURL());
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Currency Converter");
         stage.setScene(scene);

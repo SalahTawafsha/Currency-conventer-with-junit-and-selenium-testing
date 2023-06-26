@@ -1,11 +1,12 @@
 package org.example;
 
+import org.example.convert.Convert;
+
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-import org.example.convert.Convert;
 import org.example.convert.FromAPI;
 import org.example.convert.FromDatabase;
 import org.example.helper.FileManagement;
@@ -14,7 +15,7 @@ import org.example.model.Currency;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class MainController implements Initializable {
+public class MainController  implements Initializable {
     @FXML
     public Button convert;
     @FXML
