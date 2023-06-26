@@ -1,5 +1,7 @@
 package org.example.model;
 
+import java.util.Objects;
+
 public class Currency implements Comparable<Currency> {
     private String name;
     private String code;
@@ -34,4 +36,12 @@ public class Currency implements Comparable<Currency> {
     public int compareTo(Currency o) {
         return this.code.compareTo(o.code);
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Currency currency)) return false;
+        return getCode().equalsIgnoreCase(((Currency) o).getCode());
+    }
+
 }
