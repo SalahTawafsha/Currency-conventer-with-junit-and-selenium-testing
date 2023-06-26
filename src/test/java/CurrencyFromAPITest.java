@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import org.example.MainController;
 import org.example.convert.Convert;
 import org.example.convert.FromAPI;
@@ -19,23 +19,12 @@ import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-@Nested
-=======
-import org.example.testing.Selenium;
-import org.junit.jupiter.api.*;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
->>>>>>> origin/master
 class CurrencyFromAPITest {
     static Selenium selenium;
     @BeforeAll
     static void beforeAll() {
         selenium = new Selenium();
-<<<<<<< HEAD
-=======
-        selenium.open();
->>>>>>> origin/master
+
     }
     @Test
     @DisplayName("zero input")
@@ -53,7 +42,7 @@ class CurrencyFromAPITest {
         assertEquals("Amount of currancy can't be negative !!", result);
     }
 
-<<<<<<< HEAD
+
 
     @Nested
     class TestGUI {
@@ -91,8 +80,7 @@ class CurrencyFromAPITest {
         }
     }
 
-=======
->>>>>>> origin/master
+
     @Test
     @DisplayName("positive input")
     void emptyInput() throws InterruptedException {
