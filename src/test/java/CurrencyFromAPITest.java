@@ -1,5 +1,4 @@
-package org.example.testing;
-
+import org.example.testing.Selenium;
 import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

@@ -1,5 +1,3 @@
-package org.example.testing;
-
 import org.example.MainController;
 import org.example.convert.Convert;
 import org.example.convert.FromDatabase;
